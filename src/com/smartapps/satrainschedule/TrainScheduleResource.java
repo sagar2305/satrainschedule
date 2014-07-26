@@ -109,25 +109,41 @@ public class TrainScheduleResource implements Serializable {
 	   
 	    if(train.getScheduleData().size() == 0)
 	    {
-	    	String error = doc.select("h1").first().text().trim();
-	    	if(!error.equals(""))
-	    		return "\"error\":"+"\""+error+"\"";
+	    	String error = "";
+	    	if(doc.select("h1").size() != 0)
+	    	{
+	    		error = doc.select("h1").first().text().trim();
+	    		if(!error.equals(""))
+	    			return "{\"error\":"+"\""+error+"\"}";
+	    	}
 	        
-	    	error = doc.select("h2").first().text().trim();
-	    	if(!error.equals(""))
-	    		return "\"error\":"+"\""+error+"\"";
+	    	if(doc.select("h2").size() != 0)
+	    	{
+	    		error = doc.select("h2").first().text().trim();
+	    		if(!error.equals(""))
+	    			return "{\"error\":"+"\""+error+"\"}";
+	    	}
 	    	
-	    	error = doc.select("h3").first().text().trim();
-	    	if(!error.equals(""))
-	    		return "\"error\":"+"\""+error+"\"";
+	    	if(doc.select("h3").size() != 0)
+	    	{
+	    		error = doc.select("h3").first().text().trim();
+	    		if(!error.equals(""))
+	    			return "{\"error\":"+"\""+error+"\"}";
+	    	}
 	    	
-	    	error = doc.select("h3").first().text().trim();
-	    	if(!error.equals(""))
-	    		return "\"error\":"+"\""+error+"\"";
+	    	if(doc.select("td.errorTextL11").size() != 0)
+	    	{
+	    		error = doc.select("td.errorTextL11").first().text().trim();
+	    		if(!error.equals(""))
+	    			return "{\"error\":"+"\""+error+"\"}";
+	    	}
 	    	
-	    	error = doc.select("a:contains(SORRY)").first().text().trim();
-	    	if(!error.equals(""))
-	    		return "\"error\":"+"\""+error+"\"";
+	    	if(doc.select("a:contains(SORRY)").size() != 0)
+	    	{
+	    		error = doc.select("a:contains(SORRY)").first().text().trim();
+	    		if(!error.equals(""))
+	    			return "{\"error\":"+"\""+error+"\"}";
+	    	}
 	    	
 	    	return "{\"error\" : \"The IndianRail server is not responding. Please try again later!\"}";
 	    }
