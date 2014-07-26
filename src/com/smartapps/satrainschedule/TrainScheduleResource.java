@@ -94,8 +94,8 @@ public class TrainScheduleResource implements Serializable {
 	    				{
 	    					ScheduleData data = train.new ScheduleData();
 		    				data.setStationName(td.get(1).text().trim()+"("+td.get(2).text().trim()+")");
-		    				data.setArrivalTime(td.get(3).text().trim());
-		    				data.setDepartureTime(td.get(4).text().trim());
+		    				data.setArrivalTime(td.get(3).text().trim().equals("SRC") ? "Source" : td.get(3).text().trim());
+		    				data.setDepartureTime(td.get(4).text().trim().equals("DSTN") ? "Destn" : td.get(4).text().trim());
 		    				data.setDistance(td.get(5).text().trim().equals("") ? "0 KM" : td.get(5).text().trim()+" KM");
 		    				data.setDay(td.get(6).text().trim());
 		    				
