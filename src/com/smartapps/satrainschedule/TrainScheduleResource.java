@@ -93,11 +93,11 @@ public class TrainScheduleResource implements Serializable {
 	    				if(td.size() > 6)
 	    				{
 	    					ScheduleData data = train.new ScheduleData();
-		    				data.setStation(td.get(1).text().trim()+"("+td.get(2).text().trim()+")");
-		    				data.setArrival(td.get(3).text().trim());
-		    				data.setDeparture(td.get(4).text().trim());
+		    				data.setStationName(td.get(1).text().trim()+"("+td.get(2).text().trim()+")");
+		    				data.setArrivalTime(td.get(3).text().trim());
+		    				data.setDepartureTime(td.get(4).text().trim());
 		    				data.setDistance(td.get(5).text().trim().equals("") ? "0 KM" : td.get(5).text().trim()+" KM");
-		    				data.setDays(td.get(6).text().trim());
+		    				data.setDay(td.get(6).text().trim());
 		    				
 		    				train.getScheduleData().add(data);
 	    				}

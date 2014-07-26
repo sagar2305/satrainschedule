@@ -25,23 +25,25 @@ public class TrainSchedule {
 	}
 
 	public class ScheduleData {
-		public String getStation() {
-			return station;
+		
+		private String stationName;
+		public String getStationName() {
+			return stationName;
 		}
-		public void setStation(String station) {
-			this.station = station;
+		public void setStationName(String stationName) {
+			this.stationName = stationName;
 		}
-		public String getArrival() {
-			return arrival;
+		public String getArrivalTime() {
+			return arrivalTime;
 		}
-		public void setArrival(String arrival) {
-			this.arrival = arrival;
+		public void setArrivalTime(String arrivalTime) {
+			this.arrivalTime = arrivalTime;
 		}
-		public String getDeparture() {
-			return departure;
+		public String getDepartureTime() {
+			return departureTime;
 		}
-		public void setDeparture(String departure) {
-			this.departure = departure;
+		public void setDepartureTime(String departureTime) {
+			this.departureTime = departureTime;
 		}
 		public String getDistance() {
 			return distance;
@@ -49,16 +51,15 @@ public class TrainSchedule {
 		public void setDistance(String distance) {
 			this.distance = distance;
 		}
-		public String getDays() {
-			return days;
+		public String getDay() {
+			return day;
 		}
-		public void setDays(String days) {
-			this.days = days;
+		public void setDay(String day) {
+			this.day = day;
 		}
-		private String station;
-		private String arrival;
-		private String departure;
+		private String arrivalTime;
+		private String departureTime;
 		private String distance;
-		private String days;
+		private String day;
 	}
 }
